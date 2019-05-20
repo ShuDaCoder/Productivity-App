@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Kevin's Lofi Productivity App</title>
+		<link rel="stylesheet" href="style.css" media="screen">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	</head>
+	<body>
+		
+		<div class="iframe-container">
+			<!-- autoplay=1& -->
+			<iframe src="https://www.youtube.com/embed/hHW1oY26kxQ?showinfo=0&rel=0&fs=0&color=white&controls=0&disablekb=1" width="560" height="315" frameborder="0"></iframe>
+		</div>
+		<div class="email-container">
+			<ul>
+				<li>
+					<a href="https://mail.google.com/mail/u/0/?tab=rm#inbox" target="_blank">Personal Email</a>
+				</li>
+				<li>
+					<a href="https://outlook.office.com/owa/?realm=buckeyemail.osu.edu#authRedirect=true" target="_blank">College Email</a>
+				</li>
+				<li>
+					<a href="https://my.headspace.com/" target="_blank">Meditate</a>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="task-container">
+			<p>
+				<label for="new-task">Add Task<button class="reset" onclick="reset()">Reset</button></label>
+				<input type="text" id="new-task">
+				<button onclick="addTask()">Add</button>
+			</p>
+			<h3>Todo</h3>
+			<ul id="incomplete-tasks">
+			</ul>
+			<h3>Completed</h3>
+			<ul id="completed-tasks">
+			</ul>
+		</div>
+		<div class="pomodoro-container" tabindex="-1" id="pomTimer">
+			<div class="pomodoro">
+				<h1>Timer</h1>
+				<p id="currentTask">Click on a task to start</p>
+				<p id="status"></p>
+				<p id="timerDisplay">25:00</p>
+				<button id="startBtn" class="paused">Start</button>
+			</div>
+			
+			<div class="settings">
+				<div id="work">
+					<p>Work Duration</p>
+					<button class="btn-settings" id="work-plus">+</button>
+					<div><span id="work-min">25</span> mins</div>
+					<button class="btn-settings" id="work-minus">-</button>
+				</div>
+				<button id="reset" class="btn">RESET</button>
+				
+				<div id="break">
+					<p>Break Duration</p>
+					<button class="btn-settings" id="break-plus">+</button>
+					<div><span id="break-min">5</span> mins</div>
+					<button class="btn-settings" id="break-minus">-</button>
+				</div>
+				
+			</div>
+			
+			<script src="scripts.js"></script>
+		</body>
+	</html>
