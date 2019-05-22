@@ -8,12 +8,10 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	</head>
 	<body>
-		
-		<div class="iframe-container">
-			<!-- autoplay=1& -->
-			<iframe src="https://www.youtube.com/embed/hHW1oY26kxQ?showinfo=0&rel=0&fs=0&color=white&controls=0&disablekb=1" width="560" height="315" frameborder="0"></iframe>
-		</div>
+		<h1>Deep Work Ritual</h1>
+
 		<div class="email-container">
+			<h2>Always check your email(s) before your deep work session to eliminate the need to check it during the session</h2>
 			<ul>
 				<li>
 					<a href="https://mail.google.com/mail/u/0/?tab=rm#inbox" target="_blank">Personal Email</a>
@@ -21,18 +19,21 @@
 				<li>
 					<a href="https://outlook.office.com/owa/?realm=buckeyemail.osu.edu#authRedirect=true" target="_blank">College Email</a>
 				</li>
-				<li>
-					<a href="https://my.headspace.com/" target="_blank">Meditate</a>
-				</li>
+				
 			</ul>
+		</div>
+
+		<div class="iframe-container">
+			<!-- autoplay=1& -->
+			<h2>Decide on your accompaniments like music, materials, etc</h2>
+			<iframe src="https://www.youtube.com/embed/hHW1oY26kxQ?showinfo=0&rel=0&fs=0&color=white&controls=0&disablekb=1" width="560" height="315" frameborder="0"></iframe>
 		</div>
 		
 		<div class="task-container">
-			<p>
-				<label for="new-task">Add Task<button class="reset" onclick="reset()">Reset</button></label>
+			<h2>Decide on what to work on</h2>
+				<label for="new-task">Add Task<button onclick="reset()">Reset</button></label>
 				<input type="text" id="new-task">
 				<button onclick="addTask()">Add</button>
-			</p>
 			<h3>Todo</h3>
 			<ul id="incomplete-tasks">
 			</ul>
@@ -43,11 +44,12 @@
 		<div class="pomodoro-container" tabindex="-1" id="pomTimer">
 			<div class="pomodoro">
 				<h1>Timer</h1>
-				<p id="currentTask">Click on a task to start</p>
+				<p id="currentTask">Click on the clock icon next to a task to start</p>
 				<p id="status"></p>
 				<p id="timerDisplay">25:00</p>
-				<button id="startBtn" class="paused">Start</button>
+				<button id="startBtn" class="btn">Start</button>
 			</div>
+
 			
 			<div class="settings">
 				<div id="work">
@@ -66,6 +68,7 @@
 				</div>
 				
 			</div>
+		</div>
 			
 			<script src="scripts.js"></script>
 		</body>
