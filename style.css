@@ -1,28 +1,38 @@
-/* Include the padding and border in an element's total width and height */
-
-/* Style the iframe */
-
-
-/* Remove margins and padding from the list */
-/* Basic Style */
-body {
-  background: #fff;
-  color: #333;
-  font-family: Lato, sans-serif;
+/* Dark themed */
+body{
+  background-color: black;
+  color: white;
+  font-family: Lato , sans-serif;
 }
-.container {
-  display: block;
-  width: 400px;
-  margin: 100px auto 0;
+
+/*Don't want to center align the task container*/
+h1, h2, .email-container, .iframe-container{
+  margin-top: 60px;
+  text-align: center;
+  position: relative;
 }
+
+/*Email rounded borders*/
+a{
+  background-color: black;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 25px;
+  border: 2px solid white;
+  padding: 10px;
+  margin: 5px;
+  color:white;
+}
+
+/*Styling the to do list*/
 ul {
-  margin: 0;
+  margin: 0px 0px 30px;
   padding: 0;
 }
-li * {
+.task-container li * {
   float: left;
 }
-li, h3 {
+.task-container li, h3 {
   clear:both;
   list-style:none;
 }
@@ -83,26 +93,31 @@ p > button:hover {
 }
 
 /* Task list */
-li {
+.task-container{
+  margin: auto;
+  width: 70%;
+}
+
+.task-container li {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
 }
-li > input[type="checkbox"] {
+.task-container li > input[type="checkbox"] {
   margin: 0 10px;
   position: relative;
   top: 15px;
 }
-li > label {
+.task-container li > label {
   font-size: 18px;
   line-height: 40px;
   width: 75%;
   padding: 0 0 0 11px;
 }
-li >  input[type="text"] {
+.task-container li >  input[type="text"] {
   width: 73%;
 }
-li > .delete:hover {
+.task-containerli > .delete:hover {
   color: #CF2323;
 }
 
@@ -125,69 +140,55 @@ ul li.editMode label {
   display:none;
 }
 
-.reset {
-  position:relative;
-  
-
-}
-
-.task-container{
-  margin: auto;
-  width: 70%;
-}
-
-.iframe-container{
-  margin: auto;
-  display: block;
-  width: 40%;
-}
-
-.email-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
 /* Pomodoro Timer */
 .pomodoro-container h1 {
-  font-family: 'Pacifico', cursive;
   font-size: 4em;
-  font-weight: lighter;
   padding: 0px;
   margin: 0px 10px;
 }
 
 .pomodoro-container {
+  font-family: 'Pacifico', cursive;
+  font-weight: lighter;
+  font-size: 18px;
   padding: 0px;
   width: 100%;
   max-width: 800px;
   margin: auto;
   text-align: center;
+  box-shadow: white 0px 2px 3px, inset white 0px -1px 2px;
+  border-radius: 20px;
+  position: relative;
 }
-
-/*#currentTask{
-  color: #333;
-  font-size: 2em;
-}
-#timerDisplay{
-  color: #333;
-  font-size: 4em;
-  font-weight: bold;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}*/
 
 .pomodoro {
   margin: 0 auto;
   position: relative;
   padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#currentTask{
+  font-size: 25px;
+  margin: 0;
+}
+
+#status {
+  font-size: 2em;
+  margin: 0;
+}
+
+#timerDisplay{
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0px 0px 10px;
+  line-height: 30px;
+
 }
 
 .btn {
-  margin: 10px;
+  margin: auto;
   padding: 8px 10px;
   color: white;
   font-size: 1em;
@@ -195,16 +196,14 @@ ul li.editMode label {
   border: 2px solid white;
 }
 
-/*#startBtn {
+#startBtn {
   height: 40px;
   width: 90px;
   border-radius: 20px;
-  position: absolute;
-  bottom: 8%;
-  left: 48%;
-  transform: translate(-50%, -50%);
-  background: #4f8760;
-}*/
+  margin-top:30px;
+  margin-left:44%;
+  margin-right:39%;
+}
 
 .btn-settings {
   background-color: #4e4e5b;
@@ -242,19 +241,10 @@ ul li.editMode label {
 
 #work p, #break p {
   color: #074082;
-  background: #efc4c4;
   padding: 5px;
 }
 
-/*#status {
-  width: 70%;
-  color: #efc4c4;
-  font-size: 2em;
-  position: absolute;
-  top: 45%;
-  left:50%;
-  transform: translate(-50%, -50%);
-}*/
+
 
 @media only screen and (max-width: 400px) {
   .timerDisplay {
@@ -263,88 +253,3 @@ ul li.editMode label {
 }
 
 
-
-/* Set all odd list items to a different color (zebra-stripes) */
-
-
-/* Style accordion panel. Note: hidden by default */
-/*.panel {
-  padding: 0 18px;
-  background-color: white;
-  display: none;
-  overflow: hidden;
-}
-
-
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-/* Style the close button */
-/*.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
-}
-
-.close:hover {
-  background-color: #f44336;
-  color: white;
-}*/
-
-/* Style the header */
-/*.header {
-  background-color: #f44336;
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
-}
-*/
-/* Clear floats after the header */
-/*.header:after {
-  content: "";
-  display: table;
-  clear: both;
-}*/
-
-/* Style the input */
-/*input {
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  width: 75%;
-  padding: 10px;
-  float: left;
-  font-size: 16px;
-}*/
-
-/* Style the "Add" button */
-/*.addBtn {
-  padding: 10px;
-  width: 25%;
-  background: #d9d9d9;
-  color: #555;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
-}
-
-.addBtn:hover {
-  background-color: #bbb;
-}*/
